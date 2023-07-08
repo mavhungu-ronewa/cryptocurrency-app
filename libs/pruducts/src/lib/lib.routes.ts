@@ -1,5 +1,16 @@
 import { Route } from '@angular/router';
+import { ProductComponent } from './product/product.component';
 
 export const pruductsRoutes: Route[] = [
-  /* {path: '', pathMatch: 'full', component: InsertYourComponentHere} */
+  { 
+    path: '',
+      children: [
+        { path: '', component: ProductComponent },
+        { path: ':id',
+          children: [
+            { path: '', component: ProductComponent }
+          ]
+        }
+      ]
+  }
 ];
