@@ -15,7 +15,8 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@crypocurrency/frontend-ui": ["libs/frontend-ui/src/index.ts"]
+      "@crypocurrency/frontend-ui": ["libs/frontend-ui/src/index.ts"],
+      "@crypocurrency/pruducts": ["libs/pruducts/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

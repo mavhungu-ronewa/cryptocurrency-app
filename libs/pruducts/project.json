@@ -1,0 +1,47 @@
+{
+  "name": "pruducts",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/pruducts/src",
+  "prefix": "crypocurrency",
+  "tags": [],
+  "projectType": "library",
+  "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/pruducts/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/pruducts/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/pruducts/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
+    "test": {
+      "executor": "@nx/jest:jest",
+      "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
+      "options": {
+        "jestConfig": "libs/pruducts/jest.config.ts",
+        "passWithNoTests": true
+      },
+      "configurations": {
+        "ci": {
+          "ci": true,
+          "codeCoverage": true
+        }
+      }
+    },
+    "lint": {
+      "executor": "@nx/linter:eslint",
+      "outputs": ["{options.outputFile}"],
+      "options": {
+        "lintFilePatterns": ["libs/pruducts/**/*.ts", "libs/pruducts/**/*.html"]
+      }
+    }
+  }
+}
