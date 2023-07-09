@@ -1,5 +1,6 @@
 import { Route } from '@angular/router';
 import { NxWelcomeComponent } from './nx-welcome.component';
+import { PageNotFoundComponent } from './component/page-not-found/page-not-found.component';
 
 export const appRoutes: Route[] = [
   { 
@@ -10,5 +11,8 @@ export const appRoutes: Route[] = [
   },
   {
     path: 'product', loadChildren: ()=> import('@crypocurrency/pruducts').then(m=>m.PruductsModule)
+  },
+  {
+    path: '**', component: PageNotFoundComponent
   }
 ];
